@@ -1,4 +1,4 @@
-# Tier 2: Edge AI on the NVIDIA Jetson Orin Nano
+# Edge AI on the NVIDIA Jetson Orin Nano
 
 This project is part of a larger series called Edge AI Across the Compute Spectrum, which examines how the same small machine learning workload performs across different classes of hardware. Tier 1 targets a microcontroller, an STM32F407 running FreeRTOS. Tier 2, covered in this repository, targets the NVIDIA Jetson Orin Nano, an embedded GPU board common in drones and robotics. Tier 3 targets a laptop-class Apple silicon chip.
 
