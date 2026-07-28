@@ -1,0 +1,7 @@
+.idea/
+.venv/
+*.onnx
+*.onnx.data
+__pycache__/
+*.pyc
+.DS_Store
