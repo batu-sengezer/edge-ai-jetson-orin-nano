@@ -191,10 +191,6 @@ CUDA timings in Section 2 are single-run kernel compute times and exclude host-t
 
 The custom kernel in Section 2 does not outperform cuBLAS and is not presented as doing so.
 
-Figures not directly measured are omitted rather than estimated.
-
-This approach follows a correction applied to the Tier 1 documentation, where latency figures were initially described in terms implying more certainty than the underlying measurement supported. The correction was made by a senior engineer during review and is applied here from the outset.
-
 ---
 
 ## Repository contents
