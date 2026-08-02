@@ -35,7 +35,9 @@ The overall pattern suggests that parallel hardware provides a large benefit on 
 
 ## Hardware and setup
 
-![Jetson Orin Nano Developer Kit](media/jetson-board1.jpg)
+<p align="center">
+  <img src="media/jetson-board1.jpg" width="250">
+</p>
 
 The Jetson Orin Nano is built around a system-on-module with a unified memory architecture: the ARM CPU and the NVIDIA GPU sit on the same die and address the same physical LPDDR5 pool, rather than each holding a private memory space connected by a discrete PCIe link, as on a desktop with a dedicated GPU. Boards of this class are aimed at robotics and drone applications, where meaningful GPU compute is needed within a much smaller power and size budget than a discrete desktop GPU allows.
 
