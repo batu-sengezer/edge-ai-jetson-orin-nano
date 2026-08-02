@@ -22,14 +22,14 @@ Sections 1, 3, and 4 all use the HAR model as a common reference point, which ke
 
 These are single-board observations from a limited number of runs and should be read at that scale rather than as general claims about the hardware.
 
-| Section | What was measured | Result |
-|---|---|---|
-| 1 | HAR model, CPU versus GPU,![ORIN_NANO_8gb.jpg](../../Downloads/ORIN_NANO_8gb.jpg) FP16 versus FP32 | For a model this small, the GPU showed no measurable advantage, and the two precisions performed about the same |
-| 2 | Hand-written CUDA matrix multiply | A simple GPU kernel substantially outperformed a single-threaded CPU loop, with the gap widening as matrix size increased |
-| 2 | Tiled kernel versus cuBLAS | The tiled kernel reached roughly a fifth of cuBLAS's throughput |
-| 3 | Live camera pipeline | Model inference was fast; the surrounding pipeline, mainly camera capture, was far slower and appears to be the actual bottleneck |
-| 4 | CPU and memory contention | Median latency was largely unaffected under load; the observed worst-case latency increased sharply |
-| 5 | Power draw at two power modes | The lower power mode used noticeably less energy for a modest reduction in throughput |
+| Section | What was measured                           | Result |
+|---|---------------------------------------------|---|
+| 1 | HAR model, CPU versus GPU, FP16 versus FP32 | For a model this small, the GPU showed no measurable advantage, and the two precisions performed about the same |
+| 2 | Hand-written CUDA matrix multiply           | A simple GPU kernel substantially outperformed a single-threaded CPU loop, with the gap widening as matrix size increased |
+| 2 | Tiled kernel versus cuBLAS                  | The tiled kernel reached roughly a fifth of cuBLAS's throughput |
+| 3 | Live camera pipeline                        | Model inference was fast; the surrounding pipeline, mainly camera capture, was far slower and appears to be the actual bottleneck |
+| 4 | CPU and memory contention                   | Median latency was largely unaffected under load; the observed worst-case latency increased sharply |
+| 5 | Power draw at two power modes               | The lower power mode used noticeably less energy for a modest reduction in throughput |
 
 The overall pattern suggests that parallel hardware provides a large benefit on compute-heavy workloads and little to none on small workloads where GPU call overhead outweighs the computation itself. This was not the expected outcome at the start of the project; the HAR model result in particular ran against the initial assumption that GPU acceleration would help across the board.
 
