@@ -24,7 +24,7 @@ These are single-board observations from a limited number of runs and should be 
 
 | Section | What was measured | Result |
 |---|---|---|
-| 1 | HAR model, CPU versus GPU, FP16 versus FP32 | For a model this small, the GPU showed no measurable advantage, and the two precisions performed about the same |
+| 1 | HAR model, CPU versus GPU,![ORIN_NANO_8gb.jpg](../../Downloads/ORIN_NANO_8gb.jpg) FP16 versus FP32 | For a model this small, the GPU showed no measurable advantage, and the two precisions performed about the same |
 | 2 | Hand-written CUDA matrix multiply | A simple GPU kernel substantially outperformed a single-threaded CPU loop, with the gap widening as matrix size increased |
 | 2 | Tiled kernel versus cuBLAS | The tiled kernel reached roughly a fifth of cuBLAS's throughput |
 | 3 | Live camera pipeline | Model inference was fast; the surrounding pipeline, mainly camera capture, was far slower and appears to be the actual bottleneck |
@@ -35,6 +35,7 @@ The overall pattern suggests that parallel hardware provides a large benefit on 
 
 ## Hardware and setup
 
+![Jetson Orin Nano Developer Kit](media/jetson-board.jpg)
 The Jetson Orin Nano is built around a system-on-module with a unified memory architecture: the ARM CPU and the NVIDIA GPU sit on the same die and address the same physical LPDDR5 pool, rather than each holding a private memory space connected by a discrete PCIe link, as on a desktop with a dedicated GPU. Boards of this class are aimed at robotics and drone applications, where meaningful GPU compute is needed within a much smaller power and size budget than a discrete desktop GPU allows.
 
 | Component | Detail |
